@@ -1,12 +1,17 @@
 class BookingsController < ApplicationController
   layout 'profile_layout'
+
   def index
     @bookings = Booking.all
   end
 
+  def new
+     @booking = Booking.new
+  end
+
   def create
     @booking = Booking.new(booking_params)
-    roof = Event.find(params[:roof_id])
+    event = Event.find(params[:event_id])
     @booking.event = event
     @booking.user = current_user
     # raise
@@ -15,6 +20,11 @@ class BookingsController < ApplicationController
     else
       render 'events/show', notice: 'Something went wrong. Could not book roof!'
     end
+  end
+
+  def show
+    @booking = Booking.new
+    @event = Event.find(params[:id])
   end
 
 
