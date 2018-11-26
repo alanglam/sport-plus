@@ -1,4 +1,5 @@
-<h1>Sports</h1>
-<% @sports.each do |sport| %>
-  <h3><%= link_to sport.name,  sport_events_path(sport) %></h3>
-  <%  end  %>
+<%= simple_form_for :search, url: events_path, method: :get do |f| %>
+  <%= f.input :city_query, label: false, required: true, placeholder: "Select a city" %>
+  <%= f.input :sport_query, collection: Sport.all, as: :radio_buttons, required: true %>
+  <%= f.submit 'Go' %>
+<% end %>

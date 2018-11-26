@@ -2,6 +2,7 @@
 
 Booking.destroy_all
 Event.destroy_all
+Sport.destroy_all
 User.destroy_all
 
 
@@ -31,7 +32,8 @@ event = Event.create!(
   capacity: 10,
   duration: 1,
   longitude: 32.0574457,
-  latitude: 34.7346472
+  latitude: 34.7346472,
+  city: "Tel Aviv"
 )
 event_2 = Event.create!(
   date: Date.today,
@@ -41,7 +43,8 @@ event_2 = Event.create!(
   capacity: 10,
   duration: 1,
   longitude: 32.057315,
-  latitude: 34.8026763
+  latitude: 34.8026763,
+  city: "Tel Aviv"
 )
 
 event_3 = Event.create!(
@@ -52,7 +55,8 @@ event_3 = Event.create!(
   capacity: 10,
   duration: 1,
   longitude: 32.035239,
-  latitude: 34.7659962
+  latitude: 34.7659962,
+  city: "Tel Aviv"
   )
 
 event_4 = Event.create!(
@@ -63,7 +67,8 @@ event_4 = Event.create!(
   capacity: 2,
   duration: 1,
   longitude: 32.0876577,
-  latitude: 34.7652809
+  latitude: 34.7652809,
+  city: "Tel Aviv"
   )
 
 event_5 = Event.create!(
@@ -74,7 +79,8 @@ event_5 = Event.create!(
   capacity: 2,
   duration: 1,
   longitude: 32.0565675,
-  latitude: 34.7529409
+  latitude: 34.7529409,
+  city: "Tel Aviv"
   )
 
 event_6 = Event.create!(
@@ -85,7 +91,8 @@ event_6 = Event.create!(
   capacity: 4,
   duration: 1,
   longitude: 32.0764839,
-  latitude: 34.7689215
+  latitude: 34.7689215,
+  city: "Tel Aviv"
   )
 
 
@@ -97,7 +104,8 @@ event_7 = Event.create!(
   capacity: 6,
   duration: 1,
   longitude: 32.0801657,
-  latitude: 34.6967588
+  latitude: 34.6967588,
+  city: "Tel Aviv"
   )
 
 event_8 = Event.create!(
@@ -108,7 +116,8 @@ event_8 = Event.create!(
   capacity: 6,
   duration: 1,
   longitude: 32.0827656,
-  latitude: 34.7324023
+  latitude: 34.7324023,
+  city: "Tel Aviv"
   )
 
   booking_1 = Booking.create!(
