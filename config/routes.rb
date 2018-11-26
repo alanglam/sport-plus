@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-resources :sports
-resources :events
- resources :bookings
+resources :sports, only: [:show, :index] do
+  resources :events, only: [:show, :index] do
+    resources :bookings
+  end
+end
  root "pages#home"
 
 
