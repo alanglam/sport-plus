@@ -1,0 +1,32 @@
+<div id="Bookings" class="container-booking">
+  <h1>Bookings</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"> N° reservations</th>
+          <th scope="col">Event Name</th>
+          <th scope="col">Day / Night</th>
+
+          <th scope="col">Date</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bookings.each_with_index do |booking, index| %>
+          <tr>
+            <th scope="row"><%= index + 1 %></th>
+            <td><%= booking.event.name %></td>
+            <td><%= booking.period.capitalize %></td>
+
+            <td>
+              <% if booking.date != nil  %>
+                <%= booking.date.strftime('%d %B %Y') %>
+              <% end %>
+              <td class= "approved" >Confirmed</td>
+            </td>
+          <td><%=  %></td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
