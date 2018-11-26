@@ -1,0 +1,69 @@
+.page_first {
+  opacity: 0.7;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  background-size: cover !important;
+  width: 100%;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  z-index: -2;
+}
+
+.logo {
+  height: 50%;
+  width: 25%;
+  margin: 15% 0 0 37%;
+}
+
+.container_first {
+  h2 {
+    font-family: $headers;
+    color: white;
+    margin-left: 37%;
+    font-weight: 500;
+  }
+}
+
+.form-inputs {
+  color: white;
+  padding: 2% 10%;
+  .boolean {
+    padding: 0 0 0 4%;
+  }
+}
+
+.form-actions {
+  .btn {
+  width: 80%;
+  font-weight: bold;
+  margin-left: 10%;
+  background-color: $orange;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  color: white;
+  }
+}
+
+.container_last {
+  margin: 10% 10%;
+  a {
+    color: white;
+  }
+}
+
+
+// BUTTON FB //
+.fb-login-button {
+  background-color: #304BAA;
+  color: white;
+  border-radius: 4px;
+  height: 4vh;
+  width: 80%;
+  margin: 15% 0 10% 10%;
+  p {
+    padding: 1% 0 0 25%;
+    width: 100%;
+  }
+}
