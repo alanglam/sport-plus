@@ -1,3 +1,5 @@
+
+
 Booking.destroy_all
 Event.destroy_all
 User.destroy_all
@@ -128,3 +130,4 @@ event_8 = Event.create!(
     user_id: user_1.id,
     event_id: event_6.id
     )
+
