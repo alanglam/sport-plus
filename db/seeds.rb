@@ -1,18 +1,18 @@
 
-
+puts "Destroy all"
 Booking.destroy_all
 Event.destroy_all
 Sport.destroy_all
 User.destroy_all
-
+puts "Create all"
 
 def random_user
  user = User.all.sample
 end
 
-user_1 = User.create!(email: 'alanglam@gmail.com', password: '123456')
-user_2 = User.create!(email: 'moshe@gmail.com', password: '123456')
-user_3 = User.create!(email: 'leah@gmail.com', password: '123456')
+user_1 = User.create!(first_name: 'Alan', email: 'alanglam@gmail.com', password: '123456')
+user_2 = User.create!(first_name: 'Moshe', email: 'moshe@gmail.com', password: '123456')
+user_3 = User.create!(first_name: 'Leah', email: 'leah@gmail.com', password: '123456')
 
 sport = Sport.create!(name: 'Soccer')
 sport_2 = Sport.create!(name: 'Basketball')
@@ -139,4 +139,4 @@ event_8 = Event.create!(
     user_id: user_1.id,
     event_id: event_6.id
     )
-
+puts "Seeds created"
