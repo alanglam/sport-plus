@@ -1,5 +1,18 @@
-<%= simple_form_for :search, url: events_path, method: :get do |f| %>
-   <%= f.input :city_query, collection: Event::CITIES.sort,class: "form-control" ,selected: 1%>
-   <%= f.input :sport_query, collection: Sport.all, as: :radio_buttons, required: true %>
-  <%= f.submit 'Go' %>
-<% end %>
+
+<div class= "simple-form"><p>Where you would like to play?</p>
+  <%= simple_form_for :search, url: events_path, method: :get do |f| %>
+       <%= f.input :city_query, collection: Event::CITIES.sort,class: "form-control" ,selected: 1%>
+    <div class="container">
+      <div class="row">
+        <%= f.input :sport_query, collection: Sport::IMAGES.map {|i| image_tag(i).html_safe }, as: :radio_buttons, required: true, label_html: { class: 'col-xs-12 col-sm-4'} %>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class= "form-actions">
+        <%= f.submit 'Go', class: 'btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
