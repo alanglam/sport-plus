@@ -1,13 +1,14 @@
-
-<div class= "simple-form"><p>Where you would like to play?</p>
+<div class= "simple-form">
+  <p>Where you would like to play?</p>
   <%= simple_form_for :search, url: events_path, method: :get do |f| %>
-       <%= f.input :city_query, label: false, collection: Event::CITIES.sort,class: "form-control", selected: 1%>
-    <div class="container">
-      <div class="row">
+
+    <%= f.input :city_query, label: false, collection: Event::CITIES.sort, class: "form-control", selected: 1%>
+    <div class="row">
+      <div class="col col-xs-12 col-sm-4">
         <%= f.input_field :sport_query, label: false, collection: Sport.all.map {|sport| [image_tag(sport.picture), sport.id, sport.name] }, as: :radio_buttons, required: true, class: 'form-check-input'%>
+
       </div>
     </div>
-
     <div class="flex">
       <div class= "form-actions">
         <%= f.submit 'Go', class: 'btn'%>
