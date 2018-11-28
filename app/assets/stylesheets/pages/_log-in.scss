@@ -38,15 +38,17 @@
   }
 }
 
-.form-actions {
+.sign-in {
   position: relative;
   align-items: center;
-  .btn {
   font-weight: bold;
   background-color: $pink;
   border-radius: 4px;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   color: white;
+  .active {
+    background-color: $pink;
+    color: white;
   }
 }
 

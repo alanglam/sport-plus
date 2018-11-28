@@ -1,0 +1,41 @@
+img.user {
+  width: 30%;
+  height: 20%;
+  margin: 7% 7%;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+.user-description{
+  margin-top: 15%;
+}
+
+.main-profile {
+  color: $black;
+  h1 {
+    font-size: 100%;
+    padding: 5% 0 0 10%;
+  }
+}
+
+.container {
+  display:flex;
+}
+.user-name {
+  font-size: 128%;
+}
+
+.gender {
+  width: 17%;
+  height: 17%;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+.male {
+  margin-left: 10%;
+}
+
+.female {
+  margin-left: 5%;
+}
