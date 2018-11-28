@@ -1,7 +1,19 @@
+<div
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+</div>
 <h1>Events:</h1>
-<% @events.each do |event| %>
-
-  <h3><%= link_to event.address,  sport_event_bookings_path(@sport, event) %></h3>
+  <% @events.each do |event| %>
+  <div class="card">
+  <h3><%= @sport.name %></h3>
+  <div class="card-description">
+  <p> <%= event.address %> </p>
+  <p> <%= event.date.strftime('%d %B %Y')%></p>
   <%  end  %>
+  </div>
+</div>
 
 
+<%= link_to 'Create your event', sport_event_bookings_path(@sport, @events) %>
