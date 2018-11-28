@@ -4,11 +4,22 @@ label.collection_radio_buttons{
   }
 }
 
-.form-check-input{
-  display: none;
-}
 
 .simple-form {
   margin: 7% 10%;
+  .row {
+  flex-wrap: wrap;
+  display: flex;
+  }
+  .form-check-input{
+  display: none;
+  }
+  .sign-in {
+    margin: 5% 0 17% 40% ;
+  }
+  .active {
+    background-color: $pink;
+    color: white;
+  }
 }
 

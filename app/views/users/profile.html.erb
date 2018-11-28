@@ -1,2 +1,21 @@
-<h1>Users</h1>
-<%= current_user %>
+<div class= "main-profile">
+  <div class="container">
+  <%= image_tag "user.png", class: "user"%>
+  <div class="user-description">
+    <div class="user-name">
+      <%= current_user.first_name%>
+      <%= current_user.last_name%>
+    </div>
+    <%= current_user.email %>
+  </div>
+  </div>
+
+  <h1>Who are you?</h1>
+  <%= image_tag "spyware.png", class: "gender male"%>
+  <%= image_tag "clerk.png", class: "gender female"%>
+
+  <h1>Would you like to play for?</h1>
+  <%= image_tag "trophy.png", class: "gender male"%>
+  <%= image_tag "friendship.png", class: "gender female"%>
+  <h1>Sport preferences?</h1>
+</div>

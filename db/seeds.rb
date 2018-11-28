@@ -10,9 +10,9 @@ def random_user
  user = User.all.sample
 end
 
-user_1 = User.create!(first_name: 'Alan', email: 'alanglam@gmail.com', password: '123456')
-user_2 = User.create!(first_name: 'Moshe', email: 'moshe@gmail.com', password: '123456')
-user_3 = User.create!(first_name: 'Leah', email: 'leah@gmail.com', password: '123456')
+user_1 = User.create!(first_name: 'Alan', last_name: 'Glam', email: 'alanglam@gmail.com', password: '123456')
+user_2 = User.create!(first_name: 'Moshe', last_name: 'Sandmann',email: 'moshe@gmail.com', password: '123456')
+user_3 = User.create!(first_name: 'Leah', last_name: 'Sadoun',email: 'leah@gmail.com', password: '123456')
 
 sport = Sport.create!(name: 'Soccer', picture: 'Soccer.png')
 sport_2 = Sport.create!(name: 'Basketball', picture:'Basketball.png' )
