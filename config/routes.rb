@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'users#profile'
   resources :events, only: :index
   resources :sports, only: [:show, :index] do
-    resources :events, only: [:show, :index] do
+    resources :events, only: [:show, :index, :new, :create] do
       resources :bookings
     end
   end
