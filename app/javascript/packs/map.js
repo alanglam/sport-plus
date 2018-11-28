@@ -21,9 +21,9 @@ if (mapElement) {
       .addTo(map);
   })
   if (markers.length === 0) {
-    map.setZoom(10);
+    map.setZoom(0);
   } else if (markers.length === 1) {
-    map.setZoom(25);
+    map.setZoom(15);
     map.setCenter([markers[0].lng, markers[0].lat]);
   } else {
     const bounds = new mapboxgl.LngLatBounds();
