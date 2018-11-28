@@ -10,10 +10,14 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
+    <% if user_signed_in? %>
+      <%= render 'shared/navbar' %>
+    <% end %>
     <div>
-      <div class="map-wrapper">
-        <%= yield %>
-      </div>
+      <%= yield %>
+      <% if user_signed_in? %>
+      <%= render 'shared/footer' %>
+      <% end %>
     </div>
     <%= javascript_pack_tag 'map' %>
     <%= javascript_include_tag 'application' %>

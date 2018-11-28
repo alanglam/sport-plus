@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  layout 'map', only: :index
   def index
     @events = Event.where.not(latitude: nil, longitude: nil)
 
