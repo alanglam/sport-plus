@@ -1,8 +1,8 @@
 <%= simple_form_for(@event) do |f| %>
   <div class="form-inputs">
     <%= f.input :date, label: "Choose the day and the hour", as: :string, input_html: { id: 'flatpikr'} %>
-    <%= f.input :duration, collection: Event::TIMES, label: "How many hours?"  %>
-    <%= f.input :address, label: "Where would you like to play?" %>
+    <%= f.input :duration, collection: Event::TIMES, label: "How many hours?" %>
+    <%= f.input :address, label: "Where would you like to play?", id:'event_address' %>
     <%= f.label "Total of players?" %>
     <br>
     <%= radio_button_tag(:capacity, "12") %>
