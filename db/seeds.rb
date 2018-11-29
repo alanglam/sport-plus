@@ -15,14 +15,17 @@ user_2 = User.create!(first_name: 'Moshe', last_name: 'Sandmann',email: 'moshe@g
 user_3 = User.create!(first_name: 'Leah', last_name: 'Sadoun',email: 'leah@gmail.com', password: '123456')
 
 sport = Sport.create!(name: 'Soccer', picture: 'Soccer.png')
-sport_2 = Sport.create!(name: 'Basketball', picture:'Basketball.png' )
-sport_3 = Sport.create!(name: 'Billiard', picture:'Pool.png')
-sport_4 = Sport.create!(name: 'Volley-ball', picture:'Volley.png')
+sport_2 = Sport.create!(name: 'Bowling', picture:'Bowling.png')
+sport_3 = Sport.create!(name: 'Tennis', picture:'Tennis.png')
+
+sport_4 = Sport.create!(name: 'Basketball', picture:'Basketball.png')
 sport_5 = Sport.create!(name: 'Beach-Volley', picture:'Beach-volley.png')
-sport_6 = Sport.create!(name: 'Bowling', picture:'Bowling.png')
+sport_6 = Sport.create!(name: 'Ping Pong', picture:'Ping-pong.png')
+
 sport_7 = Sport.create!(name: 'Football', picture:'Football.png')
-sport_8 = Sport.create!(name: 'Tennis', picture:'Tennis.png')
-sport_9 = Sport.create!(name: 'Ping Pong', picture:'Ping-pong.png')
+sport_8 = Sport.create!(name: 'Billiard', picture:'Pool.png')
+sport_9 = Sport.create!(name: 'Volley-ball', picture:'Volley-1.png')
+
 
 event = Event.create!(
   date: Date.today,
