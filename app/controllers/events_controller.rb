@@ -33,7 +33,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to events_path, notice: 'Your event was successfully created.'
     else
-      render 'events/new', notice: 'Something went wrong. Could not book roof!'
+      render 'events/new', notice: 'Something went wrong. Could not create your event!'
     end
   end
 
