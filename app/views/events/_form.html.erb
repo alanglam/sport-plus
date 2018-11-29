@@ -6,8 +6,10 @@
     </div>
     <%= f.input :date, label: "Choose the day and the hour", as: :string, input_html: { id: 'flatpikr'} %>
 
-    <%= f.input :duration, collection: Event::TIMES, label: "How many hours?"  %>
-    <!-- add code master-->
+
+    <%= f.input :duration, collection: Event::TIMES, label: "How many hours?" %>
+    <%= f.input :address, label: "Where would you like to play?", id:'event_address' %>
+
     <%= f.label "Total of players?" %>
     <div class= "players">
       <%= f.input :capacity, label: false %>
