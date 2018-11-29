@@ -2,7 +2,6 @@
   color: $black;
   h1 {
     font-size: 100%;
-    padding-left: 10%;
   }
   label {
     color: $black;
@@ -10,13 +9,6 @@
     line-height: 1.1;
     font-family: "Raleway", "Helvetica", "sans-serif";
   }
-}
-
-.centered {
-  margin-left: 15%;
-}
-.create-event{
-margin-top: 5%;
 }
 
 .back {
@@ -28,5 +20,44 @@ margin-top: 5%;
     line-height: 1.1;
     font-family: "Raleway", "Helvetica", "sans-serif";
     margin-bottom: 17%;
+  }
+}
+
+.simple-form1 {
+  margin: 2% 5%;
+  .row {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  }
+  .form-check-input{
+  display: none;
+  }
+  .sign-in {
+    margin: 0 0 3% 0;
+  }
+  .active {
+    background-color: $pink;
+    color: white;
+    width: 42%;
+  }
+  p {
+    margin-top: 9%;
+    font-size: 18px;
+    color: $black;
+  }
+  label.collection_radio_buttons{
+  min-height: 92px;
+  max-width: 92px;
+    img {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+}
+
+.players {
+  label{
+    margin: 2%;
   }
 }

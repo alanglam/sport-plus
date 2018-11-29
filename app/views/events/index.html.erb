@@ -9,9 +9,9 @@
 </div class="container">
   <% @events.each do |event| %>
   <div class="card">
-    <h3><%= @sport.name %></h3>
-    <p><%= event.address %></p>
-    <p><%= event.date.strftime('%b %e, %l:%M %p')%></p>
+    <h3><%= @sport&.name %></h3>
+    <p><%= event&.address %></p>
+    <p><%= event&.date&.strftime('%b %e, %l:%M %p')%></p>
     <h6 class="active sign-in btn join">Join</h6>
 
   </div>
