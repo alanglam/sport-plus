@@ -1,18 +1,21 @@
+
 <%= simple_form_for(@event) do |f| %>
   <div class="form-inputs">
+    <div class="row">
+    <%= f.input_field :sport, label: false, collection: Sport.all.map {|sport| [image_tag(sport.picture), sport.id, sport.name] }, as: :radio_buttons, :item_wrapper_class => 'inline', required: true, class: 'col col-xs-4 form-check-input'%>
+    </div>
     <%= f.input :date, label: "Choose the day and the hour", as: :string, input_html: { id: 'flatpikr'} %>
+
+
     <%= f.input :duration, collection: Event::TIMES, label: "How many hours?" %>
     <%= f.input :address, label: "Where would you like to play?", id:'event_address' %>
+
     <%= f.label "Total of players?" %>
-    <br>
-    <%= radio_button_tag(:capacity, "12") %>
-    <%= label_tag(:capacity_12, "12") %>
-    <%= radio_button_tag(:capacity, "16") %>
-    <%= label_tag(:capacity_16, "16") %>
-    <%= radio_button_tag(:capacity, "18") %>
-    <%= label_tag(:capacity_18, "18") %>
+    <div class= "players">
+      <%= f.input :capacity, label: false %>
+    </div>
   </div>
-  <div class="flex create-event">
+  <div class="flex">
     <%= f.button :submit, class: 'active sign-in btn'%>
   </div>
 <%end%>
