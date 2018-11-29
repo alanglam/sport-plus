@@ -7,12 +7,11 @@ const initDatepicker = function () {
 
   if (dateInput) {
     flatpickr('#flatpikr', {
-      enableTime: true,
-      minTime: "09:00"
+    minDate: "today",
+    enableTime: true,
+   minTime: "09:00"
     })
   }
-
-
 };
 
 export { initDatepicker };
