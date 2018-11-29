@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    sport = Sport.find(params[:sport_id])
+    @sport = Sport.find(params[:sport_id])
     @event.sport = sport
     @event.user = current_user
     if @event.save
@@ -36,7 +36,6 @@ class EventsController < ApplicationController
       render 'events/new', notice: 'Something went wrong. Could not create your event!'
     end
   end
-
 
   def show
     @sport = Sport.find(params[:id])

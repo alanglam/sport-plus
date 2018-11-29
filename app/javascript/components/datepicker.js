@@ -12,8 +12,6 @@ const initDatepicker = function () {
    minTime: "09:00"
     })
   }
-
-
 };
 
 export { initDatepicker };
