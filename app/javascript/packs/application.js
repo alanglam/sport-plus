@@ -1,9 +1,8 @@
 import "bootstrap";
+import "../components/datepicker"
 import { initDatepicker } from '../components/datepicker';
 
 initDatepicker();
-initPeriodButtons();
-
 
 import { FlashDisappears } from '../components/flash_disappears';
 

@@ -21,16 +21,15 @@ class EventsController < ApplicationController
     end
   end
 
-def new
-     @event = Event.new
+  def new
+    @event = Event.new
   end
 
   def create
     @event = Event.new(event_params)
-    sport = Sport.find(params[:sport_id])
+    @sport = Sport.find(params[:sport_id])
     @event.sport = sport
     @event.user = current_user
-    raise
     if @event.save
       redirect_to events_path, notice: 'Your event was successfully created.'
     else
@@ -38,15 +37,13 @@ def new
     end
   end
 
-
   def show
     @sport = Sport.find(params[:id])
     @event = Event.find(params[:id])
     @booking = Booking.find(params[:id])
-
   end
 
-   private
+  private
 
   def event_params
     params.require(:event).permit(:date, :duration, :address, :user_id, :sport_id)

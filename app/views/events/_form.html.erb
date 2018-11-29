@@ -1,20 +1,18 @@
 <%= simple_form_for(@event) do |f| %>
   <div class="form-inputs">
-    <%= f.input :date, label: "Which day?", %>
-    <%= f.input :date, label: "Which hour?", %>
-      <%= f.input :duration, label: "How many hours?"  %>
-      <%= f.input :address, label: "Where would you like to play?" %>
-<%= f.label "Total of players?" %>
-<br>
-<%= radio_button_tag(:capacity, "12") %>
-<%= label_tag(:capacity_12, "12") %>
-<%= radio_button_tag(:capacity, "16") %>
-<%= label_tag(:capacity_16, "16") %>
-<%= radio_button_tag(:capacity, "18") %>
-<%= label_tag(:capacity_18, "18") %>
-
+    <%= f.input :date, label: "Choose the day and the hour", as: :string, input_html: { id: 'flatpikr'} %>
+    <%= f.input :duration, collection: Event::TIMES, label: "How many hours?"  %>
+    <%= f.input :address, label: "Where would you like to play?" %>
+    <%= f.label "Total of players?" %>
+    <br>
+    <%= radio_button_tag(:capacity, "12") %>
+    <%= label_tag(:capacity_12, "12") %>
+    <%= radio_button_tag(:capacity, "16") %>
+    <%= label_tag(:capacity_16, "16") %>
+    <%= radio_button_tag(:capacity, "18") %>
+    <%= label_tag(:capacity_18, "18") %>
   </div>
-  <div class="form-actions" class ="btn btn-primary">
-    <%= f.button :submit %>
+  <div class="flex create-event">
+    <%= f.button :submit, class: 'active sign-in btn'%>
   </div>
 <%end%>

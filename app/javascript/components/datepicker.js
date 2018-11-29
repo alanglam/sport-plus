@@ -1,24 +1,18 @@
-import 'flatpickr/dist/flatpickr.css';
 import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.css';
+
 
 const initDatepicker = function () {
-  const dateInput = document.getElementById('event_date');
-  const bookingDateInput = document.getElementById('booking_date');
+  const dateInput = document.getElementById('flatpikr');
 
   if (dateInput) {
-    flatpickr(dateInput, {
-      minDate: 'today',
-         enableTime: true,
-      dateFormat: 'd-m-Y H:i',
-    });
+    flatpickr('#flatpikr', {
+      enableTime: true,
+      minTime: "09:00"
+    })
   }
 
-  if (bookingDateInput) {
-    flatpickr(bookingDateInput, {
-      minDate: 'today',
-      dateFormat: 'd-m-Y',
-     });
-  }
+
 };
 
 export { initDatepicker };

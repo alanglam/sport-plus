@@ -1,3 +1,18 @@
-<h1>New Event</h1>
-<%=render 'form', events: @event%>
-<%=link_to 'Back', events_path%>
+<div class="event-main">
+  <h1>Choose your sport</h1>
+  <div class= "centered">
+    <%= image_tag "Soccer.png", class: "gender male sport-marg"%>
+    <%= image_tag "Bowling.png", class: "gender female sport-marg"%>
+    <%= image_tag "Tennis.png", class: "gender female sport-marg"%>
+    <%= image_tag "Basketball.png", class: "gender male sport-marg"%>
+    <%= image_tag "Beach-volley.png", class: "gender female sport-marg"%>
+    <%= image_tag "Ping-pong.png", class: "gender female sport-marg"%>
+    <%= image_tag "Football.png", class: "gender male sport-marg"%>
+    <%= image_tag "Pool.png", class: "gender female sport-marg"%>
+    <%= image_tag "Volley-1.png", class: "gender female sport-marg"%>
+  </div>
+  <%=render 'form', events: @event%>
+  <div class=" flex back">
+  <%=link_to 'Back', root_path%>
+  </div>
+</div>

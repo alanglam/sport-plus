@@ -10,13 +10,11 @@
   <% @events.each do |event| %>
   <div class="card">
     <h3><%= @sport.name %></h3>
-    <p> <%= event.address %> </p>
-    <p> <%= event.date.strftime('%d %B %Y')%></p>
+    <p><%= event.address %></p>
+    <p><%= event.date.strftime('%d %B %Y')%></p>
+    <h6 class="active sign-in btn join">Join</h6>
   </div>
   <% end %>
-  <div class="event-create">
-  <%= link_to 'CREATE YOUR EVENT', new_sport_event_path(@events) %>
-  </div>
 </div>
 
 
