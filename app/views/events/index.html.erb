@@ -11,7 +11,7 @@
   <div class="card">
     <h3><%= @sport.name %></h3>
     <p> <%= event.address %> </p>
-    <p> <%= event.date.strftime('%d %B %Y')%></p>
+    <p> <%= event.date.strftime('%b %e, %l:%M %p')%></p>
   </div>
   <% end %>
   <div class="event-create">
