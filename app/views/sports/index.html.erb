@@ -3,10 +3,10 @@
   <%= simple_form_for :search, url: events_path, method: :get do |f| %>
 
     <%= f.input :city_query, label: false, collection: Event::CITIES.sort, class: "form-control", selected: 1%>
-
+    <p>Choose your sport</p>
     <div class="row">
-        <%= f.input_field :sport_query, label: false, collection: Sport.all.map {|sport| [image_tag(sport.picture), sport.id, sport.name] }, as: :radio_buttons, required: true, class: 'col col-xs-4 form-check-input'%>
-        <%= f.submit 'Go', class: ' active sign-in btn'%> 
+        <%= f.input_field :sport_query, label: false, collection: Sport.all.map {|sport| [image_tag(sport.picture), sport.id, sport.name] }, as: :radio_buttons, :item_wrapper_class => 'inline', required: true, class: 'col col-xs-4 form-check-input'%>
+        <%= f.submit 'Go', class: ' active sign-in btn'%>
       </div>
     </div>
   <% end %>
