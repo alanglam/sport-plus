@@ -12,8 +12,7 @@
     <h3><%= @sport&.name %></h3>
     <p><%= event&.address %></p>
     <p><%= event&.date&.strftime('%b %e, %l:%M %p')%></p>
-    <h6 class="active sign-in btn join">Join</h6>
-
+    <h6 class="active sign-in btn join"><%=link_to 'Join', new_event_booking_path(event.id), method: :get %></h6>
   </div>
   <% end %>
 </div>
