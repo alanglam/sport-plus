@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_135541) do
+ActiveRecord::Schema.define(version: 2018_12_02_103243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2018_11_27_135541) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_bookings_on_event_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.bigint "message_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_chat_rooms_on_message_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -38,6 +46,16 @@ ActiveRecord::Schema.define(version: 2018_11_27_135541) do
     t.string "city"
     t.index ["sport_id"], name: "index_events_on_sport_id"
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "chat_room_id"
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "sports", force: :cascade do |t|
@@ -65,4 +83,5 @@ ActiveRecord::Schema.define(version: 2018_11_27_135541) do
   add_foreign_key "bookings", "users"
   add_foreign_key "events", "sports"
   add_foreign_key "events", "users"
+  add_foreign_key "messages", "users"
 end
