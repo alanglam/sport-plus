@@ -12,6 +12,7 @@
     <h3><%= @sport&.name %></h3>
     <p><%= event&.address %></p>
     <p><%= event&.date&.strftime('%b %e, %l:%M %p')%></p>
+
     <p>Available spots: <%=event&.available_slots%>/<%= event&.capacity%></p>
     <% if event.full? %>
       <button type="button" class="btn" disabled>Full</button>
