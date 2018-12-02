@@ -8,6 +8,7 @@
 
 
     <%= f.input :duration, collection: Event::TIMES, label: "How many hours?" %>
+    <%= f.input :city, label: "Select a city", collection: Event::CITIES.sort, class: "form-control", selected: 1 %>
     <%= f.input :address, label: "Where would you like to play?", id:'event_address' %>
 
     <%= f.label "Total of players?" %>
