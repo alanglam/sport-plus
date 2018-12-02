@@ -2,7 +2,7 @@
 <%= simple_form_for(@event) do |f| %>
   <div class="form-inputs">
     <div class="row">
-    <%= f.input_field :sport, label: false, collection: Sport.all.map {|sport| [image_tag(sport.picture), sport.id, sport.name] }, as: :radio_buttons, :item_wrapper_class => 'inline', required: true, class: 'col col-xs-4 form-check-input'%>
+    <%= f.input_field :sport, label: false, collection: Sport.all.map {|sport| [image_tag(sport.picture, class: 'sport-img'), sport.id, sport.name] }, as: :radio_buttons, :item_wrapper_class => 'inline', required: true, class: 'col col-xs-4 form-check-input'%>
     </div>
     <%= f.input :date, label: "Choose the day and the hour", as: :string, input_html: { id: 'flatpikr'} %>
 

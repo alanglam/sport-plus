@@ -12,8 +12,12 @@
     <h3><%= @sport&.name %></h3>
     <p><%= event&.address %></p>
     <p><%= event&.date&.strftime('%b %e, %l:%M %p')%></p>
-    <h6 class="active sign-in btn join">Join</h6>
-
+    <p>Available spots: <%=event&.available_slots%>/<%= event&.capacity%></p>
+    <% if event.full? %>
+      <button type="button" class="btn" disabled>Full</button>
+    <%else%>
+      <p><%= button_to 'Join', { action: "create", controller: "bookings", params: { booking: {event_id: event.id,  user_id: current_user.id}}}, class: ' join active sign-in btn' %>
+    <%end%>
   </div>
   <% end %>
 </div>

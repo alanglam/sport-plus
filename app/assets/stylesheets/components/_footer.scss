@@ -1,24 +1,24 @@
 .footer {
-    padding: 0 7%;
-    height: 7vh;
-    position: fixed;
-    display:flex;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: $turquoise;
+  padding: 0 7%;
+  height: 8vh;
+  position: fixed;
+  display:flex;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $turquoise;
+  color: white;
+  text-align: center;
+  a {
     color: white;
-    text-align: center;
-    a {
-      color: white;
-    }
-    img {
-      margin-top: 15%;
-      width: 38%;
-    }
-    p {
-      font-size: 12px;
-      font-weight: 700;
-      margin: 5% 0 0 0;
-    }
+  }
+  img {
+    margin-top: 15%;
+    width: 38%;
+  }
+  p {
+    font-size: 10px;
+    font-weight: 700;
+    margin: 5% 0 0 0;
+  }
 }
