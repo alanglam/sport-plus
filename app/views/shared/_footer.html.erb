@@ -1,18 +1,18 @@
 <div class="footer">
-  <div>
-  <%=link_to(image_tag("profile-user.png"), dashboard_path)%><p>Profile</p>
+   <div>
+  <%=link_to(image_tag("history.png"), bookings_path)%><p>ACTIVITY</p> <!-- find the right routes-->
   </div>
   <div>
-  <%=link_to(image_tag("logo copy.png"), root_path)%><p>Sports</p>
+  <%=link_to(image_tag("logo copy.png"), root_path)%><p>SPORTS</p>
   </div>
   <div>
-  <%=link_to(image_tag("add.png"), new_event_path)%> <p>Create</p> <!-- change root-->
+  <%=link_to(image_tag("add.png"), new_event_path)%> <p>CREATE</p> <!-- change root-->
   </div>
   <div>
-  <%=image_tag "chat.png"%><p>Chat</p> <!-- have to create controller-->
+  <%=image_tag "chat.png"%><p>CHAT</p> <!-- have to create controller-->
   </div>
   <div>
-  <%=image_tag"activity.png"%><p>Activity</p> <!-- find the right routes-->
+  <%=link_to(image_tag("profile-user.png"), dashboard_path)%><p>PROFILE</p>
   </div>
 </div>
 
