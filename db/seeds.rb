@@ -10,6 +10,8 @@ def random_user
  user = User.all.sample
 end
 
+chat_room = ChatRoom.create!(name: "general")
+
 user_1 = User.create!(first_name: 'Alan', last_name: 'Glam', email: 'alanglam@gmail.com', password: '123456')
 user_2 = User.create!(first_name: 'Moshe', last_name: 'Sandmann',email: 'moshe@gmail.com', password: '123456')
 user_3 = User.create!(first_name: 'Leah', last_name: 'Sadoun',email: 'leah@gmail.com', password: '123456')
@@ -142,4 +144,21 @@ event_8 = Event.create!(
     user_id: user_1.id,
     event_id: event_6.id
     )
+
+
+  message_1 = Message.create!(
+  content: "Hello",
+  chat_room: chat_room,
+  user: user_2
+)
+message_2 = Message.create!(
+  content: "Hey",
+  chat_room: chat_room,
+  user: user_1
+)
+message_3 = Message.create!(
+  content: "Yo",
+  chat_room: chat_room,
+  user: user_1
+)
 puts "Seeds created"

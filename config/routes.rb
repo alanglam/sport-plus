@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   resources :bookings
   resources :sports, only: [:show, :index] do
   end
+  resources :chat_rooms, only: [:show] do
+    resources :messages, only: [:create]
+  end
 end
 
