@@ -6,4 +6,12 @@ class Event < ApplicationRecord
   has_many :bookings
   TIMES = ["01:00","01:30", "02:00", "02:30", "03:00"]
   CITIES = ['- Select a City -', "Tel Aviv", "Herzliya", "Ashdod", "Ashkelon", "Jerusalem", "Raanana"]
+
+  def available_slots
+    self.capacity - self.bookings.count
+  end
+  def full?
+    self.available_slots == 0
+  end
+
 end

@@ -7,7 +7,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
+
 gem 'redis', '3.0.0'
+
+gem ‘omniauth-facebook’
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

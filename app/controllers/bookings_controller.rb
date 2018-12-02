@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-  layout 'profile_layout'
 
   def index
     @bookings = Booking.all
@@ -11,27 +10,23 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    event = Event.find(params[:event_id])
-    @booking.event = event
-    @booking.user = current_user
     # raise
     if @booking.save
-      redirect_to bookings_path, notice: 'Your booking was successfully created.'
+      redirect_to booking_path(@booking), notice: 'Your successfully join this event!'
     else
-      render 'events/show', notice: 'Something went wrong. Could not book roof!'
+      render 'events/show', notice: 'Something went wrong. Could not join this event!'
     end
   end
 
   def show
-    @booking = Booking.new
-    @event = Event.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
 
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :period, :user_id)
+    params.require(:booking).permit(:date, :period, :event_id, :user_id)
   end
 end
 
