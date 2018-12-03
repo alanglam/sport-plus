@@ -8,16 +8,18 @@
 </div class="container">
   <% @events.each do |event| %>
   <div class="card">
-    <h3><%= @sport&.name %></h3>
-    <p><%= event&.address %></p>
-    <p><%= event&.date&.strftime('%b %e, %l:%M %p')%></p>
-
-    <p>Available spots: <%=event&.available_slots%>/<%= event&.capacity%></p>
-    <% if event.full? %>
-      <button type="button" class="btn" disabled>Full</button>
-    <%else%>
-      <p><%= button_to 'Join', { action: "create", controller: "bookings", params: { booking: {event_id: event.id,  user_id: current_user.id}}}, class: ' join active sign-in btn' %>
-    <%end%>
+    <h3><%= @sport&.name %></h3><p class="float-card"><%= event&.date&.strftime('%b %e, %l:%M %p')%></p>
+    <div class= "card-description">
+      <p><%= event&.address %></p>
+      <p>Available spots: <%=event&.available_slots%>/<%= event&.capacity%></p>
+    </div>
+    <div class= "join">
+      <% if event.full? %>
+        <button type="button" class="btn" disabled>Full</button>
+      <%else%>
+        <p><%= button_to 'Join', { action: "create", controller: "bookings", params: { booking: {event_id: event.id,  user_id: current_user.id}}}, class: 'active sign-in btn' %>
+      <%end%>
+    </div>
   </div>
   <% end %>
 </div>
