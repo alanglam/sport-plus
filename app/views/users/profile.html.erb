@@ -1,7 +1,10 @@
 <div class= "main-profile">
   <div class="container">
+    <% if !(@user.image.nil?) %>
     <%= image_tag @user.image, class: "user"%>
-
+    <%  else  %>
+    <%= image_tag "user.png", class: "user"%>
+    <% end %>
     <div class="user-description">
       <div class="user-name">
         <%= current_user.first_name%>

@@ -18,7 +18,7 @@
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
-    <% if  current_page?(controller: 'events', action: 'index') %>
+    <% if current_page?(events_path) %>
       <%= render 'shared/search_bar'%>
     <% end %>
     <%= yield %>
