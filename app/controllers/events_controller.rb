@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
   def index
+    Event.all.each do |event|
+      event.destroy! if event.date > Date.today
+    end
     @events = Event.where.not(latitude: nil, longitude: nil)
 
     city_query = params[:search][:city_query]
