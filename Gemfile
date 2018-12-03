@@ -10,7 +10,7 @@ gem 'rails', '5.2.1'
 
 gem 'redis', '3.0.0'
 
-gem ‘omniauth-facebook’
+gem 'omniauth-facebook'
 
 
 gem 'autoprefixer-rails'
