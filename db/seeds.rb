@@ -12,9 +12,10 @@ end
 
 chat_room = ChatRoom.create!(name: "general")
 
-user_1 = User.create!(first_name: 'Alan', last_name: 'Glam', email: 'alanglam@gmail.com', password: '123456', remote_photo_url: 'https://images.unsplash.com/photo-1452509133926-2b180c6d6245?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af999222be587d4979a4f0de62ce9ef5&auto=format&fit=crop&w=2689&q=80')
-user_2 = User.create!(first_name: 'Moshe', last_name: 'Sandmann',email: 'moshe@gmail.com', password: '123456', remote_photo_url: 'https://images.unsplash.com/photo-1452509133926-2b180c6d6245?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af999222be587d4979a4f0de62ce9ef5&auto=format&fit=crop&w=2689&q=80')
-user_3 = User.create!(first_name: 'Leah', last_name: 'Sadoun',email: 'leah@gmail.com', password: '123456', remote_photo_url: 'https://images.unsplash.com/photo-1452509133926-2b180c6d6245?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af999222be587d4979a4f0de62ce9ef5&auto=format&fit=crop&w=2689&q=80', remote_photo_url: 'https://images.unsplash.com/photo-1452509133926-2b180c6d6245?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af999222be587d4979a4f0de62ce9ef5&auto=format&fit=crop&w=2689&q=80')
+user_1 = User.create!(first_name: 'Alan', last_name: 'Glam', email: 'alanglam@gmail.com', password: '123456')
+user_2 = User.create!(first_name: 'Moshe', last_name: 'Sandmann',email: 'moshe@gmail.com', password: '123456')
+user_3 = User.create!(first_name: 'Leah', last_name: 'Sadoun',email: 'leah@gmail.com', password: '123456')
+user_4 = User.create!(first_name: 'Test', last_name: 'Tester',email: 'maximiliasn@vondelog.com', password: '123456')
 
 sport = Sport.create!(name: 'Soccer', picture: 'Soccer.png')
 sport_2 = Sport.create!(name: 'Bowling', picture:'Bowling.png')
@@ -92,7 +93,7 @@ event_6 = Event.create!(
   date: Time.now,
   sport_id: sport_8.id,
   user_id: user_2.id,
-  address: "ben yeuda 32, Tel Aviv-Yafo",
+  address: "ben yehuda 32, Tel Aviv-Yafo",
   capacity: 4,
   duration: 1,
   longitude: 32.0764839,
@@ -107,7 +108,7 @@ event_7 = Event.create!(
   user_id: user_2.id,
   address: "Frishman Beach, Tel Aviv-Yafo",
   capacity: 6,
-  duration: 1,
+  duration: 2,
   longitude: 32.0801657,
   latitude: 34.6967588,
   city: "Tel Aviv"
@@ -117,11 +118,77 @@ event_8 = Event.create!(
   date: Time.now,
   sport_id: sport_5.id,
   user_id: user_1.id,
-  address: "Gordon Beach, Tel Aviv-Yafo",
+  address: "Hatayasim 34, Tel Aviv-Yafo",
   capacity: 6,
-  duration: 1,
+  duration: 4,
   longitude: 32.0827656,
   latitude: 34.7324023,
+  city: "Tel Aviv"
+  )
+
+event_9 = Event.create!(
+  date:  (Time.now + 7.days + 7.hours),
+  sport_id: sport.id,
+  user_id: user_1.id,
+  address: "Ed Koch St 1, Tel Aviv-Yafo",
+  capacity: 8,
+  duration: 3,
+  longitude: 32.0375839,
+  latitude: 34.7569016,
+  city: "Tel Aviv"
+  )
+
+
+
+event_10 = Event.create!(
+  date:  (Time.now + 7.days + 5.hours),
+  sport_id: sport.id,
+  user_id: user_1.id,
+  address: "Chaim Levanon St 12, Tel Aviv-Yafo",
+  capacity: 9,
+  duration: 2,
+  longitude: 32.1042459,
+  latitude: 34.7986467,
+  city: "Tel Aviv"
+  )
+
+
+event_11 = Event.create!(
+  date:  (Time.now + 6.days + 7.hours),
+  sport_id: sport.id,
+  user_id: user_1.id,
+  address: "Ben Yehuda 1, Tel Aviv-Yafo",
+  capacity: 10,
+  duration: 4,
+  longitude: 32.073308,
+  latitude: 34.7681475,
+  city: "Tel Aviv"
+  )
+
+
+
+event_12 = Event.create!(
+  date:  (Time.now + 8.days + 5.hours),
+  sport_id: sport.id,
+  user_id: user_1.id,
+  address: "Rokach Blvd 2, Tel Aviv-Yafo",
+  capacity: 11,
+  duration: 2,
+  longitude: 32.0985749,
+  latitude: 34.7798104,
+  city: "Tel Aviv"
+  )
+
+
+event_12 = Event.create!(
+  date:  (Time.now + 10.days + 7.hours),
+  sport_id: sport.id,
+  user_id: User.where(email:'maximiliasn@vondelog.com').first.id,
+  address: "HaLohamim 45, Tel Aviv-Yafo",
+  capacity: 13,
+  duration: 2,
+  longitude: 32.0337687,
+  latitude: 34.7701045,
   city: "Tel Aviv"
   )
 
