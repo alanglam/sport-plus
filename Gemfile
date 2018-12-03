@@ -11,7 +11,8 @@ gem 'rails', '5.2.1'
 gem 'redis', '3.0.0'
 
 gem 'omniauth-facebook'
-
+gem 'cloudinary', '1.9.1'
+gem 'carrierwave', '~> 1.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

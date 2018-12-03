@@ -1,6 +1,7 @@
 <div class= "main-profile">
   <div class="container">
-    <%= image_tag "user.png", class: "user"%>
+    <%= image_tag @user.image, class: "user"%>
+
     <div class="user-description">
       <div class="user-name">
         <%= current_user.first_name%>
