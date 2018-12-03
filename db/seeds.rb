@@ -30,7 +30,7 @@ sport_9 = Sport.create!(name: 'Volley-ball', picture:'Volley-1.png')
 
 
 event = Event.create!(
-  date: Time.now,
+  date: (Time.now -  1.days),
   sport_id: sport.id,
   user_id: user_1.id,
   address: "Chaim Levanon St 62, Tel Aviv-Yafo",

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     Event.all.each do |event|
-      event.destroy! if event.date > Date.today
+      event.destroy! if event.date < Date.today
     end
     @events = Event.where.not(latitude: nil, longitude: nil)
 
@@ -33,6 +33,7 @@ class EventsController < ApplicationController
     @sport = Sport.find(params['event']['sport'])
     @event.sport = @sport
     @event.user = current_user
+    @chat_room = ChatRoom.new(name: @event.address, event_id: @event.id)
     if @event.save
       @booking = Booking.new(event_id: @event.id, user_id: current_user.id)
       @booking.save

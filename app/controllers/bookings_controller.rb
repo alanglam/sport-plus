@@ -3,6 +3,9 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
   end
+  def chat
+    @bookings = current_user.bookings
+  end
 
   def new
      @booking = Booking.new
