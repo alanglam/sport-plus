@@ -1,1 +1,21 @@
-chat.html.erb
+<div class="booking" class="container-booking">
+  <div class="card-flex">
+  <%= image_tag "checked.png", class: "gender"%>
+  <p>CONFIRMED</p>
+  </div>
+  </div class="container">
+    <% @bookings.each do |booking, index| %>
+      <div class="card">
+        <div class="card-flex">
+          <%= image_tag booking&.event&.sport&.picture %>
+          <div class= "card-description">
+            <h3><%= booking&.event&.sport&.name %></h3>
+            <p><%= booking&.event&.date&.strftime('%b %e, %l:%M %p')%></p>
+            <p><%= booking&.event&.address %></p>
+          </div>
+        </div>
+        <%= button_to 'Chat', chat_room(booking.event.chat_room), method: :get, class: ' join active sign-in btn flex-end' %>
+      </div>
+    <% end %>
+  </div>
+</div>

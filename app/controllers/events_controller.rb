@@ -33,10 +33,11 @@ class EventsController < ApplicationController
     @sport = Sport.find(params['event']['sport'])
     @event.sport = @sport
     @event.user = current_user
-    @chat_room = ChatRoom.new(name: @event.address, event_id: @event.id)
     if @event.save
       @booking = Booking.new(event_id: @event.id, user_id: current_user.id)
       @booking.save
+      @chat_room = ChatRoom.new(name: @event.address, event_id: @event.id)
+      @chat_room.save
       redirect_to root_path, notice: 'Your event was successfully created.' #redirect to activity path
     else
       render 'events/new', notice: 'Something went wrong. Could not create your event!'
