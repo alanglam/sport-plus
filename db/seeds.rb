@@ -92,7 +92,7 @@ event_6 = Event.create!(
   date: Time.now,
   sport_id: sport_8.id,
   user_id: user_2.id,
-  address: "ben yeuda 32, Tel Aviv-Yafo",
+  address: "ben yehuda 32, Tel Aviv-Yafo",
   capacity: 4,
   duration: 1,
   longitude: 32.0764839,
@@ -107,7 +107,7 @@ event_7 = Event.create!(
   user_id: user_2.id,
   address: "Frishman Beach, Tel Aviv-Yafo",
   capacity: 6,
-  duration: 1,
+  duration: 2,
   longitude: 32.0801657,
   latitude: 34.6967588,
   city: "Tel Aviv"
@@ -117,9 +117,69 @@ event_8 = Event.create!(
   date: Time.now,
   sport_id: sport_5.id,
   user_id: user_1.id,
-  address: "Gordon Beach, Tel Aviv-Yafo",
+  address: "Hatayasim 34, Tel Aviv-Yafo",
   capacity: 6,
-  duration: 1,
+  duration: 4,
+  longitude: 32.0827656,
+  latitude: 34.7324023,
+  city: "Tel Aviv"
+  )
+
+event_9 = Event.create!(
+  date:  (Time.now + 7.days + 7.hours),
+  sport_id: sport_5.id,
+  user_id: user_1.id,
+  address: "Ed Koch St 1, Tel Aviv-Yafo",
+  capacity: 8,
+  duration: 3,
+  longitude: 32.0827656,
+  latitude: 34.7324023,
+  city: "Tel Aviv"
+  )
+
+event_10 = Event.create!(
+  date:  (Time.now + 7.days + 5.hours),
+  sport_id: sport_5.id,
+  user_id: user_1.id,
+  address: "Chaim Levanon St 12, Tel Aviv-Yafo",
+  capacity: 9,
+  duration: 2,
+  longitude: 32.0827656,
+  latitude: 34.7324023,
+  city: "Tel Aviv"
+  )
+
+event_11 = Event.create!(
+  date:  (Time.now + 6.days + 7.hours),
+  sport_id: sport_5.id,
+  user_id: user_1.id,
+  address: "Gordon Beach, Tel Aviv-Yafo",
+  capacity: 10,
+  duration: 4,
+  longitude: 32.0827656,
+  latitude: 34.7324023,
+  city: "Tel Aviv"
+  )
+
+event_12 = Event.create!(
+  date:  (Time.now + 8.days + 5.hours),
+  sport_id: sport_5.id,
+  user_id: user_1.id,
+  address: "Rokach Blvd 2, Tel Aviv-Yafo",
+  capacity: 11,
+  duration: 2,
+  longitude: 32.0827656,
+  latitude: 34.7324023,
+  city: "Tel Aviv"
+  )
+
+event_12 = Event.create!(
+  date:  (Time.now + 10.days + 7.hours),
+  sport_id: sport_5.id,
+  user_id: user_1.id,
+  address: "HaLohamim 45, Tel Aviv-Yafo",
+  capacity: 13,
+  duration: 2,
   longitude: 32.0827656,
   latitude: 34.7324023,
   city: "Tel Aviv"
