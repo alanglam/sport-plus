@@ -5,6 +5,14 @@
   <%= javascript_pack_tag 'map' %>
 <% end %>
 
+<div class= "searchbar">
+  <div class="check-box">
+    <p id='recurency'>Daily</p>
+    <input type="checkbox" id="toggle" class="offscreen" action='' />
+    <label for="toggle" class="switch"></label>
+  </div>
+</div>
+
 </div class="container">
   <% @events.each do |event| %>
   <div class="card">
