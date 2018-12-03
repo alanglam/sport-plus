@@ -132,10 +132,12 @@ event_9 = Event.create!(
   address: "Ed Koch St 1, Tel Aviv-Yafo",
   capacity: 8,
   duration: 3,
-  longitude: 32.0827656,
-  latitude: 34.7324023,
+  longitude: 32.0375839,
+  latitude: 34.7569016,
   city: "Tel Aviv"
   )
+
+
 
 event_10 = Event.create!(
   date:  (Time.now + 7.days + 5.hours),
@@ -144,22 +146,25 @@ event_10 = Event.create!(
   address: "Chaim Levanon St 12, Tel Aviv-Yafo",
   capacity: 9,
   duration: 2,
-  longitude: 32.0827656,
-  latitude: 34.7324023,
+  longitude: 32.1042459,
+  latitude: 34.7986467,
   city: "Tel Aviv"
   )
+
 
 event_11 = Event.create!(
   date:  (Time.now + 6.days + 7.hours),
   sport_id: sport_5.id,
   user_id: user_1.id,
-  address: "Gordon Beach, Tel Aviv-Yafo",
+  address: "Ben Yehuda 1, Tel Aviv-Yafo",
   capacity: 10,
   duration: 4,
-  longitude: 32.0827656,
-  latitude: 34.7324023,
+  longitude: 32.073308,
+  latitude: 34.7681475,
   city: "Tel Aviv"
   )
+
+
 
 event_12 = Event.create!(
   date:  (Time.now + 8.days + 5.hours),
@@ -168,10 +173,11 @@ event_12 = Event.create!(
   address: "Rokach Blvd 2, Tel Aviv-Yafo",
   capacity: 11,
   duration: 2,
-  longitude: 32.0827656,
-  latitude: 34.7324023,
+  longitude: 32.0985749,
+  latitude: 34.7798104,
   city: "Tel Aviv"
   )
+
 
 event_12 = Event.create!(
   date:  (Time.now + 10.days + 7.hours),
@@ -180,8 +186,8 @@ event_12 = Event.create!(
   address: "HaLohamim 45, Tel Aviv-Yafo",
   capacity: 13,
   duration: 2,
-  longitude: 32.0827656,
-  latitude: 34.7324023,
+  longitude: 32.0337687,
+  latitude: 34.7701045,
   city: "Tel Aviv"
   )
 
