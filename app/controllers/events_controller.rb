@@ -14,6 +14,8 @@ class EventsController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/events/map_window", locals: { event: event }) }
       }
       end
+    @events = @events.duration
+
     else
       redirect_to sports_path
     end
@@ -29,6 +31,8 @@ class EventsController < ApplicationController
     @event.sport = @sport
     @event.user = current_user
     if @event.save
+      @booking = Booking.new(event_id: @event.id, user_id: current_user.id)
+      @booking.save
       redirect_to root_path, notice: 'Your event was successfully created.' #redirect to activity path
     else
       render 'events/new', notice: 'Something went wrong. Could not create your event!'
