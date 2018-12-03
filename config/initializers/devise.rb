@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '1e6d9db40c43127e94fd9cbfd001f162c3dc4fcddb617dce5bc154c9204e839634fc1c3feab7b7555670bf9e06652fa6493b4924fbd86a24dec39f69d761d99e'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -25,7 +25,7 @@ Devise.setup do |config|
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
-
+config.omniauth :facebook, "368642203908435", "922adbcc2bb3ee5b357c621e7a126446"
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
