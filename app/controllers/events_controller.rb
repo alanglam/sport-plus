@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
   def index
+    Event.all.each do |event|
+      event.destroy! if event.date < Date.today
+    end
     @events = Event.where.not(latitude: nil, longitude: nil)
 
     city_query = params[:search][:city_query]
@@ -33,6 +36,8 @@ class EventsController < ApplicationController
     if @event.save
       @booking = Booking.new(event_id: @event.id, user_id: current_user.id)
       @booking.save
+      @chat_room = ChatRoom.new(name: @event.address, event_id: @event.id)
+      @chat_room.save
       redirect_to root_path, notice: 'Your event was successfully created.' #redirect to activity path
     else
       render 'events/new', notice: 'Something went wrong. Could not create your event!'

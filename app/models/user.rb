@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
 has_many :messages, dependent: :destroy
+has_many :chat_room, through: :events
 has_many :bookings
 mount_uploader :photo, PhotoUploader
 

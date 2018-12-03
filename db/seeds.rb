@@ -10,7 +10,7 @@ def random_user
  user = User.all.sample
 end
 
-chat_room = ChatRoom.create!(name: "general")
+
 
 user_1 = User.create!(first_name: 'Alan', last_name: 'Glam', email: 'alanglam@gmail.com', password: '123456', remote_photo_url: 'https://images.unsplash.com/photo-1452509133926-2b180c6d6245?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af999222be587d4979a4f0de62ce9ef5&auto=format&fit=crop&w=2689&q=80')
 user_2 = User.create!(first_name: 'Moshe', last_name: 'Sandmann',email: 'moshe@gmail.com', password: '123456', remote_photo_url: 'https://images.unsplash.com/photo-1452509133926-2b180c6d6245?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af999222be587d4979a4f0de62ce9ef5&auto=format&fit=crop&w=2689&q=80')
@@ -30,7 +30,7 @@ sport_9 = Sport.create!(name: 'Volley-ball', picture:'Volley-1.png')
 
 
 event = Event.create!(
-  date: Time.now,
+  date: (Time.now -  1.days),
   sport_id: sport.id,
   user_id: user_1.id,
   address: "Chaim Levanon St 62, Tel Aviv-Yafo",
@@ -146,19 +146,4 @@ event_8 = Event.create!(
     )
 
 
-  message_1 = Message.create!(
-  content: "Hello",
-  chat_room: chat_room,
-  user: user_2
-)
-message_2 = Message.create!(
-  content: "Hey",
-  chat_room: chat_room,
-  user: user_1
-)
-message_3 = Message.create!(
-  content: "Yo",
-  chat_room: chat_room,
-  user: user_1
-)
 puts "Seeds created"
