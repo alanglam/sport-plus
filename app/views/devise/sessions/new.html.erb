@@ -2,8 +2,9 @@
 
 <div class = "container_first"><img class="logo" src="https://i.ibb.co/wWRMJcj/logo.png"><h2>Sport+</h2></div>
 <div>
-  <div class="fb-login-button"><p>
-    <%= link_to "Continue with Facebook", user_facebook_omniauth_authorize_path %></p></div>
+  <div class="fb-login-button">
+    <p><%= link_to "Continue with Facebook", user_facebook_omniauth_authorize_path %></p>
+  </div>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs logiin">
