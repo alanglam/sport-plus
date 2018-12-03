@@ -1,0 +1,52 @@
+.switch {
+ position: relative;
+ display: inline-block;
+ width: 77px;
+ height: 20px;
+ background-color: rgba(55, 63, 81, 0.7);
+ border-radius: 20px;
+ transition: all 0.3s;
+ -webkit-tap-highlight-color: transparent;
+ cursor: pointer;
+}
+.switch::after {
+ content: '';
+ position: absolute;
+ width: 26px;
+ height: 26px;
+ border-radius: 23px;
+ top: -3px;
+ left: -1px;
+ background-color: white;
+ transition: all 0.3s;
+}
+input[type='checkbox']:checked + .switch::after {
+ transform: translateX(57px);
+}
+input[type='checkbox']:checked + .switch {
+ background-color: $pink;
+}
+.offscreen {
+ position: absolute;
+ left: -9999px;
+}
+
+
+.checkbox label{
+  padding: 0;
+}
+
+.check-box {
+  display: flex;
+  float: right;
+  align-items: center;
+  margin : 5%;
+  p#recurency {
+    display: inline-block;
+    margin: 0 5% 0 0;
+    color: $black;
+  }
+  label {
+    margin: 0;
+  }
+}

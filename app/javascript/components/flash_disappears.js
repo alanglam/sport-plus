@@ -1,7 +1,8 @@
 function FlashDisappears() {
-  setTimeout(() => {
-     document.getElementById("flash-alert").classList.add("disappear")
-    }, 3000);
-}
+  console.log('hello');
+  setTimeout(function(){
+     $('.alert').slideUp(500);
+    }, 900);
+};
 
-export { FlashDisappears };
+export { FlashDisappears }
