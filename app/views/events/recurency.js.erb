@@ -1,0 +1,6 @@
+function refreshIndex(innerHTML) {
+ const containerEventsList = document.getElementById('events_list');
+ containerEventsList.innerHTML = innerHTML;
+}
+
+refreshIndex('<%= j render "events/index", events: @events %>')
