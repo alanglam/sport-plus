@@ -1,7 +1,5 @@
 <div class="booking" class="container-booking">
   <div class="card-flex">
-  <%= image_tag "checked.png", class: "gender"%>
-  <p>CONFIRMED</p>
   </div>
   </div class="container">
     <% @bookings.each do |booking, index| %>
@@ -14,7 +12,7 @@
             <p><%= booking&.event&.address %></p>
           </div>
         </div>
-        <%= button_to 'Chat', chat_room(booking.event.chat_room), method: :get, class: ' join active sign-in btn flex-end' %>
+        <%= button_to 'Chat', chat_room_path(ChatRoom.where(event_id:booking.event.id).first), method: :get, class: ' join active sign-in btn flex-end' %>
       </div>
     <% end %>
   </div>
