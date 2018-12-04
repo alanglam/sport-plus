@@ -1,6 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :event
-  validates :user, uniqueness: true
-
+  has_many :users
 end
