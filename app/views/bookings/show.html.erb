@@ -12,11 +12,14 @@
       </div>
       <div class= "cont">
         <h2>Team players</h2>
-        <% if !(@booking.user.image.nil?) %>
-        <%= image_tag @booking.user.image, class: "user"%>
-        <%  else  %>
-        <%= image_tag "user.png", class: "user"%>
+        <% Booking.where(event_id: @booking.event.id).each do |booking| %>
+          <% if !(booking.user.image.nil?) %>
+            <%= image_tag booking.user.image, class: "user"%>
+          <%  else  %>
+            <%= image_tag "user.png", class: "user"%>
+          <% end %>
         <% end %>
+
       </div>
       <%= button_to 'Cancel', booking_path, method: :delete, class: ' btn-cancel active sign-in btn flex-end' %>
   </div>

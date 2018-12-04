@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
   def index
     Event.all.each do |event|
-      event.destroy! if event.date < Date.today
+      if event.date
+        event.destroy! if event.date < Date.today
+      end
     end
     @events = Event.where.not(latitude: nil, longitude: nil)
 
