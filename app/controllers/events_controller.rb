@@ -37,7 +37,7 @@ class EventsController < ApplicationController
       @booking.save
       @chat_room = ChatRoom.new(name: @event.address, event_id: @event.id)
       @chat_room.save
-      redirect_to root_path, notice: 'Your event was successfully created.' #redirect to activity path
+      redirect_to bookings_path, notice: 'Your event was successfully created.' #redirect to activity path
     else
       render 'events/new', notice: 'Something went wrong. Could not create your event!'
     end
@@ -47,6 +47,15 @@ class EventsController < ApplicationController
     @sport = Sport.find(params[:id])
     @event = Event.find(params[:id])
     @booking = Booking.find(params[:id])
+  end
+
+  def recurency
+  @sport = Sport.find(params[:sport])
+  @events = params[:recurency] == 'Weekly' ? @sport.weekly_events : @sport.daily_events
+   respond_to do |format|
+     format.js
+     format.html
+   end
   end
 
   private

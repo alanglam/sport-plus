@@ -6,14 +6,17 @@
 <% end %>
 
 <div class= "searchbar">
-  <div class="check-box">
+  <form action="/recurency" data-remote="true">
     <p id='recurency'>Daily</p>
-    <input type="checkbox" id="toggle" class="offscreen" action='' />
+    <input type="checkbox" id="toggle" class="offscreen">
     <label for="toggle" class="switch"></label>
-  </div>
+    <input type="text" name="recurency" id="recurency_params" style="display: none;">
+    <input type="text" name='sport' value='<%= @sport.id %>' style="display: none;">
+    <input type="submit" value="Submit" id="submitButton" style="display: none;">
+  </form>
 </div>
 
-</div class="container">
+</div class="container" id="events_list">
   <% @events.each do |event| %>
   <div class="card">
     <h3><%= @sport&.name %></h3><p class="float-card"><%= event&.date&.strftime('%b %e, %l:%M %p')%></p>

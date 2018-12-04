@@ -1,14 +1,20 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = current_user.bookings
   end
+
   def chat
     @bookings = current_user.bookings
   end
 
   def new
-     @booking = Booking.new
+    @booking = Booking.new
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path, notice: 'Booking cancelled!'
   end
 
   def create
@@ -25,12 +31,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-
   private
 
   def booking_params
     params.require(:booking).permit(:event_id, :user_id)
   end
 end
-
 

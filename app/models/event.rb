@@ -15,5 +15,6 @@ class Event < ApplicationRecord
     self.available_slots == 0
   end
 
+
   scope :duration, -> { order(created_at: :desc) }
 end

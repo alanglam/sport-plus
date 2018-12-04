@@ -21,7 +21,7 @@
  transition: all 0.3s;
 }
 input[type='checkbox']:checked + .switch::after {
- transform: translateX(57px);
+ transform: translateX(53px);
 }
 input[type='checkbox']:checked + .switch {
  background-color: $pink;
@@ -37,10 +37,7 @@ input[type='checkbox']:checked + .switch {
 }
 
 .check-box {
-  display: flex;
-  float: right;
-  align-items: center;
-  margin : 3%;
+
   p#recurency {
     display: inline-block;
     margin: 0 5% 0 0;
@@ -53,4 +50,16 @@ input[type='checkbox']:checked + .switch {
 
 .searchbar {
   height: 5vh;
+  form {
+    display: flex;
+    float: right;
+    align-items: center;
+    margin : 3%;
+    width: 173px;
+    justify-content: space-around;
+    color: $black;
+  }
+  p{
+    margin-right: 10%;
+  }
 }

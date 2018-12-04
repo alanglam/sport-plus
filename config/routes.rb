@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   resources :chat_rooms, only: [:show] do
     resources :messages, only: [:create]
   end
+
+  get 'recurency', to: 'events#recurency'
 end
 

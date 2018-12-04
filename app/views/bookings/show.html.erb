@@ -1,1 +1,23 @@
-show.html.erb
+<div class= "background-show">
+  <div class="image">
+    <%= image_tag @booking.event.sport.picture, class: "image-booking" %>
+  </div>
+  <div class="container">
+    <div class= "container-booking-show card-booking">
+      <div class="cont-top">
+      <h1><%= @booking.event.sport.name.upcase%></h1>
+      <p><%= @booking&.event&.date&.strftime('%l:%M %p')%></p>
+      <p><%= @booking&.event&.date&.strftime('%b - %A %e')%></p>
+      <p class= "border-event"><%= @booking&.event&.address %></p>
+      </div>
+      <div class= "cont">
+        <h2>Team players</h2>
+        <% if !(@booking.user.image.nil?) %>
+        <%= image_tag @booking.user.image, class: "user"%>
+        <%  else  %>
+        <%= image_tag "user.png", class: "user"%>
+        <% end %>
+      </div>
+      <%= button_to 'Cancel', booking_path, method: :delete, class: ' btn-cancel active sign-in btn flex-end' %>
+  </div>
+</div>
