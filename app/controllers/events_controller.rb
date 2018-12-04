@@ -18,7 +18,6 @@ class EventsController < ApplicationController
       }
       end
     @events = @events.duration
-
     else
       redirect_to sports_path
     end

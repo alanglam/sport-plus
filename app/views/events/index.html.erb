@@ -24,6 +24,8 @@
     <div class= "join">
       <% if event.full? %>
         <button type="button" class="btn" disabled>Full</button>
+      <% elsif !((event.booking_ids & current_user.booking_ids) == [])%>
+        <button type="button" class="btn" disabled>Already booked</button>
       <%else%>
         <p><%= button_to 'Join', { action: "create", controller: "bookings", params: { booking: {event_id: event.id,  user_id: current_user.id}}}, class: 'active sign-in btn' %>
       <%end%>
