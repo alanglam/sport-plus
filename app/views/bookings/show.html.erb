@@ -21,6 +21,10 @@
         <% end %>
 
       </div>
-      <%= button_to 'Cancel', booking_path, method: :delete, class: ' btn-cancel active sign-in btn flex-end' %>
+      <div class= cont-down>
+      <%= button_to 'Go back', bookings_path, method: :get, class: 'active btn btn-ok flex-end btn-cancel ' %>
+      <%= button_to 'Cancel', booking_path, method: :delete, class: 'sign-in active btn flex-end' %>
+      </div>
+    </div>
   </div>
 </div>
