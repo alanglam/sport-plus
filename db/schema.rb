@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_091314) do
+ActiveRecord::Schema.define(version: 2018_12_03_144135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,13 @@ ActiveRecord::Schema.define(version: 2018_12_04_091314) do
   end
 
   create_table "chat_rooms", force: :cascade do |t|
-    t.bigint "event_id"
+    t.bigint "message_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "event_id"
     t.index ["event_id"], name: "index_chat_rooms_on_event_id"
+    t.index ["message_id"], name: "index_chat_rooms_on_message_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -49,8 +51,8 @@ ActiveRecord::Schema.define(version: 2018_12_04_091314) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string "content"
     t.bigint "user_id"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "chat_room_id"
@@ -75,8 +77,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_091314) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "provider"
-    t.string "uid"
     t.string "photo"
     t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
