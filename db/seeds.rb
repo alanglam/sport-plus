@@ -57,13 +57,14 @@ event_3 = Event.create!(
   date: Time.now,
   sport_id: sport.id,
   user_id: user_3.id,
-  address: "HaLohamim, Tel Aviv-Yafo",
+  address: "HaLohamim 1, Tel Aviv-Yafo",
   capacity: 10,
   duration: 1,
-  longitude: 32.035239,
-  latitude: 34.7659962,
+  longitude: 32.0364865,
+  latitude: 34.7594088,
   city: "Tel Aviv"
   )
+
 
 event_4 = Event.create!(
   date: Time.now,
@@ -171,19 +172,21 @@ event_12 = Event.create!(
   date:  (Time.now + 8.days + 5.hours),
   sport_id: sport.id,
   user_id: user_1.id,
-  address: "Rokach Blvd 2, Tel Aviv-Yafo",
+  address: "PLummer Square",
   capacity: 11,
   duration: 2,
-  longitude: 32.0985749,
-  latitude: 34.7798104,
+  longitude: 32.0974422,
+  latitude: 34.7665532,
   city: "Tel Aviv"
   )
+
+
 
 
 event_12 = Event.create!(
   date:  (Time.now + 10.days + 7.hours),
   sport_id: sport.id,
-  user_id: User.where(email:'maximiliasn@vondelog.com').first.id,
+  user_id: user_1.id,
   address: "HaLohamim 45, Tel Aviv-Yafo",
   capacity: 13,
   duration: 2,
