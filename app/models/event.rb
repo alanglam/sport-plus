@@ -16,5 +16,5 @@ class Event < ApplicationRecord
   end
 
 
-  scope :duration, -> { order(created_at: :desc) }
+  scope :duration, -> { order(date: :desc) }
 end

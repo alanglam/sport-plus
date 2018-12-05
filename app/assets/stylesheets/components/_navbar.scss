@@ -4,16 +4,16 @@
   background: $turquoise;
   transition: all 0.3s ease;
   height: 7vh;
-  padding: 0px 30px;
+  padding: 0 10%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   p {
     margin-bottom: 0px;
-    float: left;
     margin: none;
     color: white;
-    font-size: 130%;
+    font-size: 26px;
+    font-weight: 500;
   }
 
   a {
@@ -68,4 +68,20 @@ i.fas.fa-bars.dropdown-toggle {
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+a.logo-nav {
+  img {
+  width: 32px;
+  height:38px;
+  padding: 0 2% 2% 0;
+  }
+}
+
+a.logo-nav:hover{
+  text-decoration: none;
+}
+.nav-flex {
+  display:flex;
+  align-items: center;
 }

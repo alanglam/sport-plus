@@ -1,15 +1,27 @@
-<%= @events.count %>
-<% @events.each do |event| %>
-  <div class="card">
-   <h3><%= event&.sport&.name %></h3>
-   <p><%= event&.address %></p>
-   <p><%= event&.date&.strftime('%b %e, %l:%M %p')%></p>
 
-   <p>Available spots: <%=event&.available_slots%>/<%= event&.capacity%></p>
-   <% if event.full? %>
-     <button type="button" class="btn" disabled>Full</button>
-   <%else%>
-     <p><%= button_to 'Join', { action: "create", controller: "bookings", params: { booking: {event_id: event.id,  user_id: current_user.id}}}, class: ' join active sign-in btn' %>
-   <%end%>
+
+  <div class="marg-bt" id="events_list">
+    <% @eventss.each do |event| %>
+
+      <div class="card">
+        <h3><%= @sport&.name %></h3><p class="float-card"><%= event&.date&.strftime('%b %e, %l:%M %p')%></p>
+        <div class= "card-description">
+          <p><%= event&.address %></p>
+          <p>Available spots: <%=event&.available_slots%>/<%= event&.capacity%></p>
+        </div>
+        <div class= "join">
+          <% if event.full? %>
+            <button type="button" class="btn" disabled>Full</button>
+          <% elsif !((event.booking_ids & current_user.booking_ids) == [])%>
+            <button type="button" class="btn" disabled>Already booked</button>
+          <%else%>
+            <p><%= button_to 'Join', { action: "create", controller: "bookings", params: { booking: {event_id: event.id,  user_id: current_user.id}}}, class: 'active sign-in btn' %>
+          <%end%>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+
+
+
