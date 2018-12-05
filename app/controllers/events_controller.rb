@@ -5,13 +5,14 @@ class EventsController < ApplicationController
         event.destroy! if event.date < Date.today
       end
     end
+
     @events = Event.where.not(latitude: nil, longitude: nil)
 
     city_query = params[:search][:city_query]
     sport_query = params[:search][:sport_query]
     if city_query.present? && sport_query.present?
       @sport = Sport.find(sport_query)
-      @events = Event.where(city: city_query, sport_id: @sport.id)
+      @events = Event.where(city: city_query, sport_id: @sport.id).select {|event| event.date.day == Date.today.day}
       @markers = @events.map do |event|
       {
         lng: event.longitude,
@@ -19,7 +20,6 @@ class EventsController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/events/map_window", locals: { event: event }) }
       }
       end
-    @events = @events.duration
     else
       redirect_to sports_path
     end
@@ -53,7 +53,7 @@ class EventsController < ApplicationController
 
   def recurency
   @sport = Sport.find(params[:sport])
-  @events = params[:recurency] == 'Weekly' ? @sport.weekly_events : @sport.daily_events
+  @eventss = params[:recurency] == 'All' ?  @sport.events.order(date: :asc) : @sport.daily_events
    respond_to do |format|
      format.js
      format.html

@@ -4,12 +4,12 @@ function checkButton() {
  const submitButton = document.getElementById('submitButton');
  const recurencyParams = document.getElementById('recurency_params');
  checkButton.addEventListener('click', (event) => {
-   if(recurencyField.innerHTML == 'Weekly') {
+   if(recurencyField.innerHTML == 'All') {
      recurencyField.innerHTML = 'Daily'
      recurencyParams.value = 'Daily'
    } else {
-     recurencyField.innerHTML = 'Weekly'
-     recurencyParams.value = 'Weekly'
+     recurencyField.innerHTML = 'All'
+     recurencyParams.value = 'All'
    }
    submitButton.click();
  })

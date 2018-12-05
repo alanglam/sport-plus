@@ -5,10 +5,12 @@
   <div class="container">
     <div class= "container-booking-show card-booking">
       <div class="cont-top">
+
       <h1><%= @booking.event.sport.name.upcase%></h1>
       <p><%= @booking&.event&.date&.strftime('%l:%M %p')%></p>
       <p><%= @booking&.event&.date&.strftime('%b - %A %e')%></p>
-      <p class= "border-event"><%= @booking&.event&.address %></p>
+      <p><%= @booking&.event&.address %></p>
+      <pclass= "border-event">Spots: <%= @booking&.event&.available_slots%>/<%= @booking&.event&.capacity%></p>
       </div>
       <div class= "cont">
         <h2>Team players</h2>
@@ -19,7 +21,9 @@
             <%= image_tag "user.png", class: "user"%>
           <% end %>
         <% end %>
-
+        <div class="chat-chat">
+        <%= link_to 'CHAT WITH THEM', chat_room_path(ChatRoom.where(event_id:@booking.event.id).first)%>
+        </div>
       </div>
       <div class= cont-down>
       <%= button_to 'Go back', bookings_path, method: :get, class: 'active btn btn-ok flex-end btn-cancel ' %>
