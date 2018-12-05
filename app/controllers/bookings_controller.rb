@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     # raise
     if @booking.save
-      redirect_to booking_path(@booking), notice: 'Your successfully join this event!'
+      redirect_to bookings_path(@booking), notice: 'Your successfully join this event!'
     else
       render 'events/show', notice: 'Something went wrong. Could not join this event!'
     end
