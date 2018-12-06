@@ -32,14 +32,14 @@ sport_7 = Sport.create!(name: 'Football', picture:'Football.png')
 sport_8 = Sport.create!(name: 'Billiard', picture:'Pool.png')
 sport_9 = Sport.create!(name: 'Volley-ball', picture:'Volley-1.png')
 
-event_1 = Event.create!(sport: sport_5, address: "ben yeuda 2", city: "Tel Aviv", date: Time.now, user: user_1, capacity: 10)
-chat_room_1 = ChatRoom.create!(event: event_1, name:"Beach-Volley", )
+# event_1 = Event.create!(sport: sport_5, address: "ben yeuda 2", city: "Tel Aviv", date: Time.now, user: user_1, capacity: 10)
+# chat_room_1 = ChatRoom.create!(event: event_1, name:"Beach-Volley", )
 
-message = Message.create!( user: user_4, content: "I agree with u @Cory!", chat_room: chat_room_1)
-message = Message.create!( user: user_6, content: "Let's play next week guys!", chat_room: chat_room_1)
-message = Message.create!( user: user_5, content: "Looks impossible to play with this weather", chat_room: chat_room_1)
-message = Message.create!( user: user_3, content: "It's raining too muchh!!!", chat_room: chat_room_1)
-message = Message.create!( user: user_1, content: "Balagannn!!", chat_room: chat_room_1)
+# message = Message.create!( user: user_4, content: "I agree with u @Cory!", chat_room: chat_room_1)
+# message = Message.create!( user: user_6, content: "Let's play next week guys!", chat_room: chat_room_1)
+# message = Message.create!( user: user_5, content: "Looks impossible to play with this weather", chat_room: chat_room_1)
+# message = Message.create!( user: user_3, content: "It's raining too muchh!!!", chat_room: chat_room_1)
+# message = Message.create!( user: user_1, content: "Balagannn!!", chat_room: chat_room_1)
 
 
 
