@@ -62,17 +62,20 @@
 
 // BUTTON FB //
 .fb-login-button {
+  display: flex;
   background-color: #304BAA;
   color: white;
   border-radius: 4px;
-  height: 4vh;
+  height: 5vh;
   width: 80%;
   margin: 10% 0 10% 10%;
   p {
-    padding: 1% 0 0 17%;
+    padding: 3% 0 0 16%;
     width: 100%;
     position: center;
     font-weight:300;
+    justify-content: center;
+    align-items: center;
   }
   a {
     color: white;
